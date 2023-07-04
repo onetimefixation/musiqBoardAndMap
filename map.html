@@ -237,6 +237,30 @@ async function updateFlightData() {
   //    document.getElementById('callsign').textContent = `Callsign: ${callsign}`;
  
 
+
+// Get the Keys
+
+// Make a request to the server-side endpoint
+fetch('/api/data')
+  .then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error('Request failed');
+    }
+  })
+  .then((data) => {
+    // Handle the response data from the server-side endpoint
+    console.log(data);
+    // Further process the data as needed
+  })
+  .catch((error) => {
+    // Handle any errors that occurred during the request
+    console.error(error);
+  });
+//    End of Get Keys
+
+
 // *********************** Get METAR from www.checkwxapi.com *******************//
 
 
