@@ -550,7 +550,7 @@ function createFlightListItem(flight) {
   const listItem = document.createElement('li');
 
   const airlineCode = flight.callsign.substring(0, 3).toUpperCase();
-  let logoSrc = `logo/${airlineCode}.png`;
+  let logoSrc = `Logo/${airlineCode}.png`;
   const fallbackLogoSrc = 'logo/BBB.png';
 
   // Create an image element for the logo
