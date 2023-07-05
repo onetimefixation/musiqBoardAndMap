@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-app.get('/api/apiKey', (req, res) => {
+app.get('https://musiqboardmap-c63a7b9c472d.herokuapp.com/api/apiKey', (req, res) => {
   const apiKey = process.env.API_KEY;
 
   if (!apiKey) {
