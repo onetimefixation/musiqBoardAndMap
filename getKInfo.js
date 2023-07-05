@@ -1,7 +1,10 @@
-/*const express = require('express');
+const express = require('express');
 const app = express();
 
- app.get('/api/apiKey', (req, res) => {
+// https://musiqboardmap-c63a7b9c472d.herokuapp.com/api/apiKey
+// /api/apiKey
+
+app.get('https://musiqboardmap-c63a7b9c472d.herokuapp.com/api/apiKey', (req, res) => {
   const apiKey = process.env.API_KEY;
 
   if (!apiKey) {
@@ -9,12 +12,9 @@ const app = express();
   }
 
   res.json({ apiKey });
-}); 
+});
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-
   console.log(`Server is running on port ${port}`);
 });
-*/
-    console.log("Hello World")
