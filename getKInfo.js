@@ -4,7 +4,7 @@ const app = express();
 // https://musiqboardmap-c63a7b9c472d.herokuapp.com/api/apiKey
 // /api/apiKey
 
-app.get('https://musiqboardmap-c63a7b9c472d.herokuapp.com/api/apiKey', (req, res) => {
+app.get('/api/apiKey', (req, res) => {
   const apiKey = process.env.API_KEY;
 
   if (!apiKey) {
