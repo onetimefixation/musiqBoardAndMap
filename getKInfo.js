@@ -1,4 +1,4 @@
-const express = require('express');
+/* const express = require('express');
 const app = express();
 
 app.get('/api/apiKey', (req, res) => {
@@ -9,9 +9,10 @@ app.get('/api/apiKey', (req, res) => {
   }
 
   res.json({ apiKey });
-});
+}); */
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
+    console.log("Hello world")
   console.log(`Server is running on port ${port}`);
 });
