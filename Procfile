@@ -1,1 +1,1 @@
-web: node getKInfo.js
+web: node server.js && npx http-server -p $PORT
