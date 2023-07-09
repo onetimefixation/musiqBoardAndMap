@@ -3,7 +3,8 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "http-server": "^14.1.1",
-    "require": "^2.4.20"
+    "path": "^0.12.7",
+    "require": "^0.4.4"
   },
   "scripts": {
     "start": "http-server -p $PORT -c-1"
