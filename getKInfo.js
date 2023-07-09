@@ -4,6 +4,11 @@ const app = express();
 // https://musiqboardmap-c63a7b9c472d.herokuapp.com/api/apiKey
 // /api/apiKey
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the server')
+})
+
+
 app.get('/api/apiKey', (req, res) => {
   const apiKey = process.env.API_KEY;
 
