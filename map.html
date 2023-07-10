@@ -243,7 +243,7 @@ fetch('/api/apiKey')
   .then((data) => {
     // Handle the response data from the server-side endpoint
     console.log(data);
-    data.apiKey = data;
+    apiKey = data.apiKey;
     console.log(apiKey);
 
     // Further process the data as needed
