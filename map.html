@@ -185,11 +185,11 @@ iframe {
 
 //require('dotenv').config();
 
-//let apiKey = process.env.API_KEY;
 let airportData = {};
 let airportCode = [];
 let flightHeading;
 let metarCounter = 0;
+const apiKey = '';
 
 // Function to update the flight data and position
 async function updateFlightData() {
@@ -227,15 +227,6 @@ async function updateFlightData() {
       document.getElementById('departure').textContent = `Departure: ${departure}`;
       document.getElementById('arrival').textContent = `Arrival: ${arrival}`;
       document.getElementById('spacer_line2').textContent = `:`;
-//console.log(pilot)
-
-
-     // document.getElementById('departure').textContent = `Departure: ${departure} - ${departureCity}`;
-     // document.getElementById('arrival').textContent = `Arrival: ${arrival} - ${arrivalCity}`;
-
-      
-  //    document.getElementById('callsign').textContent = `Callsign: ${callsign}`;
- 
 
 
 // Get the Keys
@@ -252,6 +243,9 @@ fetch('/api/apiKey')
   .then((data) => {
     // Handle the response data from the server-side endpoint
     console.log(data);
+    apiKey = data;
+    console.log(apikey);
+
     // Further process the data as needed
   })
   .catch((error) => {
@@ -273,8 +267,6 @@ var requestOptions = {
   headers: myHeaders,
   redirect: 'follow'
 };
-
-
 
 const arrivalCityCode = pilot.flight_plan.arrival;
 
