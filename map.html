@@ -241,7 +241,7 @@ async function updateFlightData() {
 // Get the Keys
 
 // Make a request to the server-side endpoint
-fetch('/api/data')
+fetch('/api/apiKey')
   .then((response) => {
     if (response.ok) {
       return response.json();

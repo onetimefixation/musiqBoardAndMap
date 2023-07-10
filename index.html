@@ -173,9 +173,6 @@
       .flight-row {
   display: flex;
   justify-content: space-between;
-  /* border-bottom: 1px solid #5d5d5d; */
-  /* padding-bottom: 1px; Adjust as needed for line between rows */
-  /* margin-bottom: 1px;  Adjust as needed for line between rows */
 }
 
 .flight-item {
@@ -225,7 +222,6 @@
         
       }
 
-
       .Gate {
         color: #ff8800;
         /* font-weight: bold; */
@@ -259,24 +255,10 @@
 .timestamp-line {
   margin: 10px; /* Adjust the margin as needed */
 }
-
-
-      
-    
-
   
   </style>
 </head>
 <body>
-<!--     <h1> <span id="title"> </span> </h1>
-    
-    <h2> <span id="timestamp"> </span> </h2> -->
-
-<!--     <div class="title-timestamp">
-      <span id="spacer"></span>
-      <h1> <span id="title"></span> </h1>
-      <h2> <span id="timestamp"></span> </h2>
-    </div> -->
 
 
     <div class="title-timestamp">
@@ -354,9 +336,6 @@ if (arrivalSearchInput !== null) {
 // **************************************************//
 
 
-
-
-
     // Fetch the airports.dat file and process its contents
     async function fetchAirportData() {
       try {
@@ -387,7 +366,6 @@ if (arrivalSearchInput !== null) {
         };
       });
     }
-
     
    
   let departureFlights = []; // Updated departure flights list
@@ -476,9 +454,6 @@ function filterArrivalFlights(arrivalSearchTerm) {
 function renderFilteredDepartureFlights() {
   renderFlights(filteredDepartureFlights, departureList);
 
-  
-  
-  //**************************const departureSearchTerm = departureSearchInput.value;
   const departureSearchTerm = departureSearchInput;
   const city = airportData[departureSearchTerm.toUpperCase()] || '';
   departureCityDisplay.textContent = city.cityName || '';
@@ -488,7 +463,6 @@ function renderFilteredDepartureFlights() {
 function renderFilteredArrivalFlights() {
   renderFlights(filteredArrivalFlights, arrivalList);
 
-  //****************************const arrivalSearchTerm = arrivalSearchInput.value;
   const arrivalSearchTerm = arrivalSearchInput;
   const city = airportData[arrivalSearchTerm.toUpperCase()] || '';
   arrivalCityDisplay.textContent = city.cityName || '';
@@ -520,28 +494,6 @@ function fetchFlightData() {
     });
 }
 
-// ******************** Old Listerner events for searches*********************** //
-
-// Event listener for departure search input
-/* departureSearchInput.addEventListener('input', function(event) {
-  const departureSearchTerm = departureSearchInput.value;
-  filterDepartureFlights(departureSearchTerm);
-});
-
-// Event listener for arrival search input
-arrivalSearchInput.addEventListener('input', function(event) {
-  const arrivalSearchTerm = arrivalSearchInput.value;
-  filterDepartureFlights(departureSearchTerm);
-});
- */
-
-// ***************************************************************************** //
-
-
-
-
-
-
 // Create a flight list item
 function createFlightListItem(flight) {
   const departureAirport = flight.flight_plan.departure.toLowerCase();
@@ -563,8 +515,6 @@ logo.alt = '';
 logo.style.width = '40px';
 logo.style.height = '40px';
 
-
-
 if (/\d/.test(airlineCode.charAt(2))) {
   logo.src = fallbackLogoSrc; // Use fallback logo for codes starting with 'N'
 } else {
@@ -579,15 +529,11 @@ if (/\d/.test(airlineCode.charAt(2))) {
     if (exists) {
       logo.src = logoSrc;
     } else {
-      console.error(`Logo image not found for logo/${airlineCode}.png. Using fallback logo.`);
+      //console.error(`Logo image not found for logo/${airlineCode}.png. Using fallback logo.`);
       logo.src = 'logo/BBB.png';
     }
   });
 }
-
-
-
-
 
   function updateFlightStatus() {
   const statusElement = listItem.querySelector('.status');
@@ -604,7 +550,6 @@ if (/\d/.test(airlineCode.charAt(2))) {
   }
 }
 
-  
   listItem.innerHTML = `
     <div class="flight-row">
       <div class="logo">${logo.outerHTML}</div>
@@ -619,7 +564,6 @@ if (/\d/.test(airlineCode.charAt(2))) {
       <div class="status ${getFlightStatus(flight)}">${getFlightStatus(flight)}</div>
     </div>
   `;
-  
   
 return listItem;
 }
@@ -647,8 +591,6 @@ return listItem;
 function degToRad(degrees) {
   return degrees * (Math.PI / 180);
 }
-
-
 
 function getFlightStatus(flight) {
   if (!flight.flight_plan || !flight.flight_plan.departure || !flight.flight_plan.arrival) {
@@ -708,10 +650,7 @@ function getFlightStatus(flight) {
   } else {
   return 'Scheduled';
 }
-
-       
 }
-
 
 
 // Set the interval to refresh the VATSIM data every 17sec minute (adjust as needed)
@@ -781,10 +720,6 @@ function updateFlightStatus(flightCallsign, newFlightStatus) {
 }
 
 
-
-
-
-
 // Example usage
 fetchVATSIMData();
 setInterval(getFlightStatus, 17000);
@@ -804,12 +739,6 @@ fetchAirportData()
 
   
 setInterval(fetchAirportData, 15000);
-
-
-
-
-
-
 
 </script>
 </body>
