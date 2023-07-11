@@ -190,6 +190,8 @@ let airportCode = [];
 let flightHeading;
 let metarCounter = 0;
 var apiKey = '';
+var apiKey_checkwx = '';
+
 
 // Function to update the flight data and position
 async function updateFlightData() {
@@ -245,6 +247,8 @@ fetch('/api/apiKey')
     console.log(data);
     apiKey = data.apiKey;
     console.log(apiKey);
+    apiKey_checkwx = data.apiKey_checkwx;
+    console.log(apiKey_checkwx);
 
     // Further process the data as needed
   })
