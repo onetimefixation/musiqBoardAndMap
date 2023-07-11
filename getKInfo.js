@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 
 app.get('/api/apiKey', (req, res) => {
     const apiKey = process.env.API_KEY;
-    const apiKey_checkwx = process.env.API_KEY_CHECKWX;
+    const apiKey_checkwx = process.env.apiKey_checkwx;
   
     if (!apiKey) {
       return res.status(500).json({ error: 'API key not found' });
