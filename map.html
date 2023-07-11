@@ -418,8 +418,8 @@ debugger
 
             // Check if the callsign is not null before calling substring
   const airlineCode = callsign ? callsign.substring(0, 3).toUpperCase() : '';
-  const logoSrc = `logo/${airlineCode}.png`;
-  const fallbackLogoSrc = 'logo/BBB.png';
+  const logoSrc = `/Logo/${airlineCode}.png`;
+  const fallbackLogoSrc = '/Logo/BBB.png';
 
             if (/\d/.test(airlineCode.charAt(2))) {
                 logo.src = fallbackLogoSrc; // Use fallback logo for codes starting with 'N'
