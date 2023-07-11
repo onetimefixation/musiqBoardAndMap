@@ -496,6 +496,11 @@ function fetchFlightData() {
 
 // Create a flight list item
 function createFlightListItem(flight) {
+
+
+console.log("createFlightListItem")
+//debugger
+
   const departureAirport = flight.flight_plan.departure.toLowerCase();
   const arrivalAirport = flight.flight_plan.arrival.toLowerCase();
 
@@ -536,6 +541,10 @@ if (/\d/.test(airlineCode.charAt(2))) {
 }
 
   function updateFlightStatus() {
+
+console.log("updateFlightStatus")
+//debugger
+
   const statusElement = listItem.querySelector('.status');
   const currentStatus = statusElement.textContent;
   const newStatus = getFlightStatus(flight);
@@ -593,6 +602,11 @@ function degToRad(degrees) {
 }
 
 function getFlightStatus(flight) {
+
+  console.log("getFlightStatus")
+//debugger
+  
+
   if (!flight.flight_plan || !flight.flight_plan.departure || !flight.flight_plan.arrival) {
     return 'Scheduled';
   }
