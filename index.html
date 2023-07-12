@@ -529,7 +529,7 @@ if (/\d/.test(airlineCode.charAt(2))) {
     img.onerror = () => resolve(false);
     logo.src = logoSrc;
   });
-debugger
+
   logoExists.then((exists) => {
     if (exists) {
       logo.src = logoSrc;
@@ -538,6 +538,8 @@ debugger
       logo.src = '/Logo/BBB.png';
     }
   });
+debugger
+
 }
 
   function updateFlightStatus() {
