@@ -201,6 +201,33 @@ async function updateFlightData() {
   // Get the flight callsign from the URL query parameters
   const callsign = urlParams.get('callsign');
 
+// Get the Keys
+
+// Make a request to the server-side endpoint
+fetch('/api/apiKey')
+  .then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error('Request failed');
+    }
+  })
+  .then((data) => {
+    // Handle the response data from the server-side endpoint
+
+    apiKey = data.apiKey;
+    apiKey_checkwx = data.apiKey_checkwx;
+
+    
+    // Further process the data as needed
+  })
+  .catch((error) => {
+    // Handle any errors that occurred during the request
+    console.error(error);
+  });
+//    End of Get Keys
+
+
   try {
     // Fetch the VATSIM API to get the flight coordinates
     const response = await fetch('https://data.vatsim.net/v3/vatsim-data.json');
@@ -231,35 +258,10 @@ async function updateFlightData() {
       document.getElementById('spacer_line2').textContent = `:`;
 
 
-// Get the Keys
-
-// Make a request to the server-side endpoint
-fetch('/api/apiKey')
-  .then((response) => {
-    if (response.ok) {
-      return response.json();
-    } else {
-      throw new Error('Request failed');
-    }
-  })
-  .then((data) => {
-    // Handle the response data from the server-side endpoint
-
-    apiKey = data.apiKey;
-    apiKey_checkwx = data.apiKey_checkwx;
 
 
 
-    // Further process the data as needed
-  })
-  .catch((error) => {
-    // Handle any errors that occurred during the request
-    console.error(error);
-  });
-//    End of Get Keys
-
-
-debugger
+//debugger
 
 // *********************** Get METAR from www.checkwxapi.com *******************//
 
