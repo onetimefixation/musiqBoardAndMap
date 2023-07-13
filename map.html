@@ -309,7 +309,7 @@ const arrivalCityCode = pilot.flight_plan.arrival;
     console.error('Error fetching flight data:', error);
   }
 
-
+/* 
 
   // Check if the plane icon already exists in the map container
 const existingPlaneIcon = document.getElementById('plane-icon');
@@ -335,7 +335,34 @@ if (existingPlaneIcon) {
   const mapContainer = document.getElementById('map-container');
   mapContainer.appendChild(planeIcon);
 }
+ */
 
+// Check if the plane icon already exists in the map container
+const existingPlaneIcon = document.getElementById('plane-icon');
+if (existingPlaneIcon) {
+  // Update the position and rotation of the existing plane icon
+  existingPlaneIcon.style.left = `${flightLongitude}px`;
+  existingPlaneIcon.style.top = `${flightLatitude}px`;
+  existingPlaneIcon.style.transform = `rotate(${flightHeading}deg)`; // Rotate the plane icon based on flight heading
+} else {
+  // Create the plane icon image element
+  const planeIcon = document.createElement('img');
+  planeIcon.src = 'Logo/ME.png'; // Assuming the plane icon image is in the "logo" folder
+  planeIcon.style.position = 'absolute';
+  planeIcon.style.width = '45px';
+  planeIcon.style.height = '45px';
+  planeIcon.style.left = `${flightLongitude}px`;  // Set the left position based on flight longitude
+  planeIcon.style.top = `${flightLatitude}px`;   // Set the top position based on flight latitude
+  planeIcon.style.transformOrigin = 'center center';
+  planeIcon.style.transform = `rotate(${flightHeading}deg)`; // Rotate the plane icon based on flight heading
+
+  // Set an id for the plane icon element
+  planeIcon.id = 'plane-icon';
+
+  // Append the plane icon to the map container
+  const mapContainer = document.getElementById('map-container');
+  mapContainer.appendChild(planeIcon);
+}
 
         // Function to reload the page when index.html changes
         function reloadPageOnChange() {
