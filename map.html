@@ -347,8 +347,8 @@ if (existingPlaneIcon) {
 const existingPlaneIcon = document.getElementById('plane-icon');
 if (existingPlaneIcon) {
   // Update the position and rotation of the existing plane icon
-  existingPlaneIcon.style.left = `${flightLongitude}px`;
-  existingPlaneIcon.style.top = `${flightLatitude}px`;
+  existingPlaneIcon.style.left = `${planeLongitude}px`;
+  existingPlaneIcon.style.top = `${planeLatitude}px`;
   existingPlaneIcon.style.transform = `rotate(${flightHeading}deg)`; // Rotate the plane icon based on flight heading
 } else {
   // Create the plane icon image element
