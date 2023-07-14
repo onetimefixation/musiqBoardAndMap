@@ -191,6 +191,8 @@ let flightHeading;
 let metarCounter = 0;
 var apiKey = '';
 var apiKey_checkwx = '';
+var planeLongitude = 0;
+var planeLatitude = 0;
 
 
 // Function to update the flight data and position
@@ -238,6 +240,10 @@ fetch('/api/apiKey')
     if (pilot && pilot.latitude && pilot.longitude) {
       const flightLatitude = parseFloat(pilot.latitude);
       const flightLongitude = parseFloat(pilot.longitude);
+
+      planeLatitude = flightLatitude; //planeLatiude is a global
+      planeLongitude = flightLongitude; //planeLongitude is a global
+
       flightHeading = parseFloat(pilot.heading); // Assign the value to the flightHeading variable
 
       // Update the speed and altitude
@@ -295,7 +301,7 @@ const arrivalCityCode = pilot.flight_plan.arrival;
 
 //*******************************************************// 
 
-debugger
+//debugger
 
 
       // Create the Google Maps embed URL with the updated flight coordinates
