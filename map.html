@@ -151,7 +151,7 @@ iframe {
   </div>
  
       <h2 class="section-title"></h2>
-      <div id="map-container">
+      <div id="map-container" style="width: 100%; height: 400px; position: relative;">
     <iframe
       width="80%"
       height="800"
@@ -181,6 +181,8 @@ iframe {
     <div id="route"></div>
   </div>
     
+
+  
   <script>
 
 //require('dotenv').config();
@@ -305,7 +307,7 @@ const arrivalCityCode = pilot.flight_plan.arrival;
 
 
       // Create the Google Maps embed URL with the updated flight coordinates
-      const mapUrl = `https://www.google.com/maps/embed/v1/view?key=${apiKey}&center=${flightLatitude},${flightLongitude}&zoom=12&maptype=satellite`;
+      const mapUrl = `https://www.google.com/maps/embed/v1/view?key=${apiKey}&center=${flightLatitude},${flightLongitude}&zoom=12&maptype=satellite height="100%" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy"`;
 
       // Update the map iframe source with the new URL
       const mapIframe = document.querySelector('iframe');
@@ -346,7 +348,7 @@ if (existingPlaneIcon) {
 // Check if the plane icon already exists in the map container
 const existingPlaneIcon = document.getElementById('plane-icon');
 
-debugger
+//debugger
 
 if (existingPlaneIcon) {
   // Update the position and rotation of the existing plane icon
