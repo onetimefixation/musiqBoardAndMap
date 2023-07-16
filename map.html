@@ -151,7 +151,7 @@ iframe {
   </div>
  
       <h2 class="section-title"></h2>
-      <div id="map-container" style="width: 100%; height: 400px; position: relative;">
+      <div id="map-container">
     <iframe
       width="80%"
       height="800"
@@ -181,8 +181,6 @@ iframe {
     <div id="route"></div>
   </div>
     
-
-  
   <script>
 
 //require('dotenv').config();
@@ -317,7 +315,7 @@ const arrivalCityCode = pilot.flight_plan.arrival;
     console.error('Error fetching flight data:', error);
   }
 
- 
+/* 
 
   // Check if the plane icon already exists in the map container
 const existingPlaneIcon = document.getElementById('plane-icon');
@@ -343,14 +341,12 @@ if (existingPlaneIcon) {
   const mapContainer = document.getElementById('map-container');
   mapContainer.appendChild(planeIcon);
 }
+ */
 
-
-
-/*  
 // Check if the plane icon already exists in the map container
 const existingPlaneIcon = document.getElementById('plane-icon');
 
-//debugger
+debugger
 
 if (existingPlaneIcon) {
   // Update the position and rotation of the existing plane icon
@@ -376,7 +372,7 @@ if (existingPlaneIcon) {
   const mapContainer = document.getElementById('map-container');
   mapContainer.appendChild(planeIcon);
 }
- */
+
         // Function to reload the page when index.html changes
         function reloadPageOnChange() {
             const location = window.location.href;
