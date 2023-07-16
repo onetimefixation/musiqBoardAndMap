@@ -307,7 +307,7 @@ const arrivalCityCode = pilot.flight_plan.arrival;
 
 
       // Create the Google Maps embed URL with the updated flight coordinates
-      const mapUrl = `https://www.google.com/maps/embed/v1/view?key=${apiKey}&center=${flightLatitude},${flightLongitude}&zoom=12&maptype=satellite height="100%" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy"`;
+      const mapUrl = `https://www.google.com/maps/embed/v1/view?key=${apiKey}&center=${flightLatitude},${flightLongitude}&zoom=12&maptype=satellite`;
 
       // Update the map iframe source with the new URL
       const mapIframe = document.querySelector('iframe');
