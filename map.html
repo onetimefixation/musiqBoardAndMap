@@ -34,9 +34,15 @@
       
     } */
 
-.container {
+/* .container {
   display: flex;
   align-items: flex-start;
+} */
+.container {
+  display: flex;
+  flex-direction: column; /* or row, depending on your desired layout */
+  align-items: flex-start; /* adjust as needed */
+  justify-content: flex-start; /* adjust as needed */
 }
 
 iframe {
@@ -148,7 +154,7 @@ iframe {
   <h1></h1>
 
   <div class="container"> <div id="back-button-container"></div>
-  </div>
+  <!-- took the div from here -->
  
       <h2 class="section-title"></h2>
       <div id="map-container">
@@ -168,7 +174,12 @@ iframe {
       <div id="callsign"></div>
       <div id="aircraft-type"></div>
       <div id="status"></div>
-   </div>
+   </div>  
+  
+  </div>
+
+
+
 
     <div id="departure"></div>
     <div id="arrival"></div>
