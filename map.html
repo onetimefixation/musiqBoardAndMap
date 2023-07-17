@@ -55,8 +55,16 @@ iframe {
 }
 
 #map-container {
-  flex: 1;
-  /*height: 800px;  Adjust the height as needed */
+ /* flex: 1;
+  height: 800px;  Adjust the height as needed */
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 800px;
+
+
   background-color: black;
 }
 
@@ -69,6 +77,13 @@ iframe {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.583);
   color: rgb(230, 5, 5);
   font-family:  Verdana, Geneva, sans-serif;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 800px;
+
 }
 
 .section-title {
@@ -357,7 +372,7 @@ if (existingPlaneIcon) {
 // Check if the plane icon already exists in the map container
 const existingPlaneIcon = document.getElementById('plane-icon');
 
-debugger
+//debugger
 
 if (existingPlaneIcon) {
   // Update the position and rotation of the existing plane icon
