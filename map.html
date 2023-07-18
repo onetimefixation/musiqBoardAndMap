@@ -317,6 +317,11 @@ var requestOptions = {
 
 const arrivalCityCode = pilot.flight_plan.arrival;
 
+
+//before making this call, check to see what the requestOptions are
+
+debugger
+
  fetch(`https://api.checkwx.com/metar/${arrivalCityCode}/decoded`, requestOptions)
 .then(response => response.json())
 .then(data => {
@@ -335,8 +340,6 @@ const arrivalCityCode = pilot.flight_plan.arrival;
 //*******************************************************// 
 
 //debugger
-
-// as the mapIframe gets initialized, it seems to be making the google call
 
 
 
