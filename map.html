@@ -336,13 +336,18 @@ const arrivalCityCode = pilot.flight_plan.arrival;
 
 //debugger
 
+// as the mapIframe gets initialized, it seems to be making the google call
+
+
 
       // Create the Google Maps embed URL with the updated flight coordinates
+    if (apiKey) {
       const mapUrl = `https://www.google.com/maps/embed/v1/view?key=${apiKey}&center=${flightLatitude},${flightLongitude}&zoom=12&maptype=satellite`;
 
       // Update the map iframe source with the new URL
       const mapIframe = document.querySelector('iframe');
       mapIframe.src = mapUrl;
+    }
     }
   } catch (error) {
     console.error('Error fetching flight data:', error);
