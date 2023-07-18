@@ -320,7 +320,7 @@ const arrivalCityCode = pilot.flight_plan.arrival;
 .then(data => {
 
     const arrivalMetar = data.data[0].raw_text;
- debugger
+ //debugger
     document.getElementById('arrivalMETAR_el').textContent = `Arrival METAR: ${arrivalMetar}`;
     document.getElementById('spacer_line3').textContent = `:`;
     document.getElementById('route').textContent = `Route: ${route}`;
@@ -332,7 +332,7 @@ const arrivalCityCode = pilot.flight_plan.arrival;
 
 //*******************************************************// 
 
-//debugger
+debugger
 
 
       // Create the Google Maps embed URL with the updated flight coordinates
