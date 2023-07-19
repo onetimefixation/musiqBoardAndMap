@@ -346,7 +346,7 @@ const arrivalCityCode = pilot.flight_plan.arrival;
       // Create the Google Maps embed URL with the updated flight coordinates
     if (apiKey) {
       const mapUrl = `https://www.google.com/maps/embed/v1/view?key=${apiKey}&center=${flightLatitude},${flightLongitude}&zoom=12&maptype=satellite`;
-debugger
+//debugger
       // Update the map iframe source with the new URL
       const mapIframe = document.querySelector('iframe');
       mapIframe.src = mapUrl;
@@ -365,7 +365,7 @@ if (existingPlaneIcon) {
   existingPlaneIcon.style.transform = `rotate(${flightHeading}deg)`; // Rotate the plane icon based on flight heading
 } else {
   // Create the plane icon image element
-  const planeIcon = document.createElement('img');
+/*   const planeIcon = document.createElement('img');
   planeIcon.src = 'Logo/ME.png'; // Assuming the plane icon image is in the "logo" folder
   planeIcon.style.position = 'fixed';
   planeIcon.style.width = '45px';
@@ -374,6 +374,18 @@ if (existingPlaneIcon) {
   planeIcon.style.top = '35%';   // 37
   planeIcon.style.transformOrigin = 'center center';
   planeIcon.style.transform = `rotate(${flightHeading}deg)`; // Rotate the plane icon based on flight heading
+ */
+
+ const planeIcon = document.createElement('img');
+planeIcon.src = 'Logo/ME.png'; // Assuming the plane icon image is in the "logo" folder
+planeIcon.style.position = 'fixed';
+planeIcon.style.width = '45px';
+planeIcon.style.height = '45px';
+planeIcon.style.left = '50%';  // Set left position to 50%
+planeIcon.style.top = '50%';   // Set top position to 50%
+planeIcon.style.transformOrigin = 'center center';
+planeIcon.style.transform = `translate(-50%, -50%) rotate(${flightHeading}deg)`; // Translate to center and rotate the plane icon based on flight heading
+
 
   // Set an id for the plane icon element
   planeIcon.id = 'plane-icon';
