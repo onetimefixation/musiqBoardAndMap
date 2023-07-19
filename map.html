@@ -5,39 +5,6 @@
   <title>Flight Map/Information</title>
   <style>
 
-   
-/*     .container {
-      display: flex;
-      align-items: flex-start;
-    }
-
-    iframe {
-      filter: grayscale(0.5) brightness(0.5);
-      box-shadow: 6px 5px 6px rgb(58, 1, 1);
-      margin-top: 0%;
-    }
-
-    #map-container {
-      flex: 1;
-      height: 700px; 
-      background-color: black;
-    }
-
-    .flight-info {
-      flex: 1;
-      margin-left: 52%;
-      margin-top: -32%;
-      background-color: rgb(247, 110, 110);
-      border-top: 1px solid #b4b4b4;
-      border-left: 1px solid #b4b4b4;
-      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.583)
-      
-    } */
-
-/* .container {
-  display: flex;
-  align-items: flex-start;
-} */
 .container {
   position: relative;
   display: flex;
@@ -191,10 +158,6 @@ flex: 1;
       <div id="aircraft-type"></div>
       <div id="status"></div>
    </div>  
-  
-
-
-
 
 
     <div id="departure"></div>
@@ -206,15 +169,12 @@ flex: 1;
     <div id="altitude"></div>    
     <div id="spacer_line3"></div>
     <div id="route"></div>
-  </div>
-      
+  </div> 
 
 </div>   <!-- div for the container -->
 
 
   <script>
-
-//require('dotenv').config();
 
 let airportData = {};
 let airportCode = [];
@@ -248,12 +208,9 @@ fetch('/api/apiKey')
   .then((data) => {
     // Handle the response data from the server-side endpoint
 
- // debugger 
-
     apiKey = data.apiKey;
     apiKey_checkwx = data.apiKey_checkwx;
 
-    
     // Further process the data as needed
   })
   .catch((error) => {
@@ -297,11 +254,6 @@ fetch('/api/apiKey')
       document.getElementById('spacer_line2').textContent = `:`;
 
 
-
-
-
-//debugger
-
 // *********************** Get METAR from www.checkwxapi.com *******************//
 
 
@@ -317,36 +269,25 @@ var requestOptions = {
 
 const arrivalCityCode = pilot.flight_plan.arrival;
 
-
-//before making this call, check to see what the requestOptions are
-
-//debugger
-
  fetch(`https://api.checkwx.com/metar/${arrivalCityCode}/decoded`, requestOptions)
 .then(response => response.json())
 .then(data => {
 
     const arrivalMetar = data.data[0].raw_text;
- //debugger
+
     document.getElementById('arrivalMETAR_el').textContent = `Arrival METAR: ${arrivalMetar}`;
     document.getElementById('spacer_line3').textContent = `:`;
     document.getElementById('route').textContent = `Route: ${route}`;
-    //console.log(arrivalMetar);
-    //console.log(metarCounter);
- 
 })
 .catch(error => console.log('error', error));
 
 //*******************************************************// 
 
 
-
-
-
       // Create the Google Maps embed URL with the updated flight coordinates
     if (apiKey) {
       const mapUrl = `https://www.google.com/maps/embed/v1/view?key=${apiKey}&center=${flightLatitude},${flightLongitude}&zoom=12&maptype=satellite`;
-//debugger
+
       // Update the map iframe source with the new URL
       const mapIframe = document.querySelector('iframe');
       mapIframe.src = mapUrl;
@@ -356,46 +297,15 @@ const arrivalCityCode = pilot.flight_plan.arrival;
     console.error('Error fetching flight data:', error);
   }
 
-/* 
-
-  // Check if the plane icon already exists in the map container
-const existingPlaneIcon = document.getElementById('plane-icon');
-if (existingPlaneIcon) {
-  // Update the position and rotation of the existing plane icon
-  existingPlaneIcon.style.transform = `rotate(${flightHeading}deg)`; // Rotate the plane icon based on flight heading
-} else {
-  // Create the plane icon image element
-  const planeIcon = document.createElement('img');
-  planeIcon.src = 'Logo/ME.png'; // Assuming the plane icon image is in the "logo" folder
-  planeIcon.style.position = 'fixed';
-  planeIcon.style.width = '45px';
-  planeIcon.style.height = '45px';
-  planeIcon.style.left = '40%';  // 
-  planeIcon.style.top = '35%';   // 37
-  planeIcon.style.transformOrigin = 'center center';
-  planeIcon.style.transform = `rotate(${flightHeading}deg)`; // Rotate the plane icon based on flight heading
-
-  // Set an id for the plane icon element
-  planeIcon.id = 'plane-icon';
-
-  // Append the plane icon to the map container
-  const mapContainer = document.getElementById('map-container');
-  mapContainer.appendChild(planeIcon);
-}
- */
-
 // Check if the plane icon already exists in the map container
 const existingPlaneIcon = document.getElementById('plane-icon');
 
-//debugger
-
 if (existingPlaneIcon) {
   // Update the position and rotation of the existing plane icon
-/*   existingPlaneIcon.style.left = `${planeLongitude}px`;
-  existingPlaneIcon.style.top = `${planeLatitude}px`; */
-  existingPlaneIcon.style.left = '30%';  // 
-  existingPlaneIcon.style.top = '35%';   // 37
-  existingPlaneIcon.style.transform = `rotate(${flightHeading}deg)`; // Rotate the plane icon based on flight heading
+
+  existingPlaneIcon.style.left = '50%';  // 
+  existingPlaneIcon.style.top = '50%';   //
+  existingPlaneIcon.style.transform = `translate(-50%, -50%) rotate(${flightHeading}deg)`; // Translate to center and rotate the plane icon based on flight heading
 } else {
   // Create the plane icon image element
   const planeIcon = document.createElement('img');
@@ -404,9 +314,7 @@ if (existingPlaneIcon) {
   planeIcon.style.width = '45px';
   planeIcon.style.height = '45px';
   planeIcon.style.left = '50%';  // 
-  planeIcon.style.top = '50%';   // 37
-/*   planeIcon.style.left = `${planeLongitude}px`;  
-  planeIcon.style.top = `${planeLatitude}px`; */
+  planeIcon.style.top = '50%';   //
   planeIcon.style.transformOrigin = 'center center';
   planeIcon.style.transform = `translate(-50%, -50%) rotate(${flightHeading}deg)`; // Translate to center and rotate the plane icon based on flight heading
   
@@ -454,12 +362,8 @@ async function fetchAirportData() {
       populateFlightInfo();
     } catch (error) {
       console.error('Error fetching airport data:', error);
-    
-
     }
   }
-
-
 
 // Process the airports.dat file contents and create the airportData object
 function processAirportData(datContents) {
@@ -474,8 +378,6 @@ function processAirportData(datContents) {
     };
   });
 }
-
-          
 
         // Populate flight info section with the flight data
         function populateFlightInfo() {
@@ -503,10 +405,6 @@ function processAirportData(datContents) {
             logo.style.width = '50px';
             logo.style.height = '50px';
 
-//console.log("map.populateFlightInfo[414]")
-//debugger
-
-
             // Check if the callsign is not null before calling substring
   const airlineCode = callsign ? callsign.substring(0, 3).toUpperCase() : '';
   const logoSrc = `/Logo/${airlineCode}.png`;
@@ -531,11 +429,7 @@ function processAirportData(datContents) {
                     }
                 });
             }
-            
-    
-
-
-
+          
             
             // Populate flight info section with the flight data
             document.getElementById('callsign').textContent = `Callsign: ${callsign}`;
@@ -550,7 +444,6 @@ function processAirportData(datContents) {
 
           }
         
- 
           addEventListener("touchstart", function(e) {
   console.log(e.defaultPrevented);  // will be false
   e.preventDefault();   // does nothing since the listener is passive
