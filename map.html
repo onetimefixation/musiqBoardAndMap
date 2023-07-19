@@ -313,6 +313,16 @@ if (existingPlaneIcon) {
   planeIcon.style.transformOrigin = 'center center';
   planeIcon.style.transform = `translate(-50%, -50%) rotate(${flightHeading}deg)`; // Translate to center and rotate the plane icon based on flight heading
   
+
+ 
+// planeIcon.style.transform = `rotate(${flightHeading}deg)`;  Rotate the plane icon based on flight heading
+
+  // Set an id for the plane icon element
+  planeIcon.id = 'plane-icon';
+
+  // Append the plane icon to the map container
+  const mapContainer = document.getElementById('map-container');
+
   // Calculate the center position of the map-container
 const mapContainerWidth = mapContainer.offsetWidth;
 const mapContainerHeight = mapContainer.offsetHeight;
@@ -324,14 +334,7 @@ const centerY = (mapContainerHeight - planeIconHeight) / 2;
 // Set the calculated position for the planeIcon
 planeIcon.style.left = `${centerX}px`;
 planeIcon.style.top = `${centerY}px`;
- 
-// planeIcon.style.transform = `rotate(${flightHeading}deg)`;  Rotate the plane icon based on flight heading
 
-  // Set an id for the plane icon element
-  planeIcon.id = 'plane-icon';
-
-  // Append the plane icon to the map container
-  const mapContainer = document.getElementById('map-container');
   mapContainer.appendChild(planeIcon);
 }
 
