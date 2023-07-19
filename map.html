@@ -365,7 +365,7 @@ if (existingPlaneIcon) {
   existingPlaneIcon.style.transform = `rotate(${flightHeading}deg)`; // Rotate the plane icon based on flight heading
 } else {
   // Create the plane icon image element
-/*   const planeIcon = document.createElement('img');
+  const planeIcon = document.createElement('img');
   planeIcon.src = 'Logo/ME.png'; // Assuming the plane icon image is in the "logo" folder
   planeIcon.style.position = 'fixed';
   planeIcon.style.width = '45px';
@@ -374,18 +374,6 @@ if (existingPlaneIcon) {
   planeIcon.style.top = '35%';   // 37
   planeIcon.style.transformOrigin = 'center center';
   planeIcon.style.transform = `rotate(${flightHeading}deg)`; // Rotate the plane icon based on flight heading
- */
-
-/*  const planeIcon = document.createElement('img');
-planeIcon.src = 'Logo/ME.png'; // Assuming the plane icon image is in the "logo" folder
-planeIcon.style.position = 'fixed';
-planeIcon.style.width = '45px';
-planeIcon.style.height = '45px';
-planeIcon.style.left = '50%';  // Set left position to 50%
-planeIcon.style.top = '50%';   // Set top position to 50%
-planeIcon.style.transformOrigin = 'center center';
-planeIcon.style.transform = `translate(-50%, -50%) rotate(${flightHeading}deg)`; // Translate to center and rotate the plane icon based on flight heading
- */
 
   // Set an id for the plane icon element
   planeIcon.id = 'plane-icon';
@@ -394,6 +382,7 @@ planeIcon.style.transform = `translate(-50%, -50%) rotate(${flightHeading}deg)`;
   const mapContainer = document.getElementById('map-container');
   mapContainer.appendChild(planeIcon);
 }
+ */
 
 // Check if the plane icon already exists in the map container
 const existingPlaneIcon = document.getElementById('plane-icon');
@@ -403,41 +392,26 @@ const existingPlaneIcon = document.getElementById('plane-icon');
 if (existingPlaneIcon) {
   // Update the position and rotation of the existing plane icon
 /*   existingPlaneIcon.style.left = `${planeLongitude}px`;
-  existingPlaneIcon.style.top = `${planeLatitude}px`; 
+  existingPlaneIcon.style.top = `${planeLatitude}px`; */
   existingPlaneIcon.style.left = '30%';  // 
   existingPlaneIcon.style.top = '35%';   // 37
   existingPlaneIcon.style.transform = `rotate(${flightHeading}deg)`; // Rotate the plane icon based on flight heading
-*/
-planeIcon.style.left = '50%';  // Set left position to 50%
-planeIcon.style.top = '50%';   // Set top position to 50%
-planeIcon.style.transformOrigin = 'center center';
-planeIcon.style.transform = `translate(-50%, -50%) rotate(${flightHeading}deg)`; // Translate to center and rotate the plane icon based on flight heading
-
 } else {
   // Create the plane icon image element
- /* const planeIcon = document.createElement('img');
-  planeIcon.src = 'Logo/ME.png'; // Assuming the plane icon image is in the "logo" folder
-  planeIcon.style.position = 'absolute';
-  planeIcon.style.width = '45px';
-  planeIcon.style.height = '45px';
-  planeIcon.style.left = '30%';  // 
-  planeIcon.style.top = '35%';   // 37
-   planeIcon.style.left = `${planeLongitude}px`;  
-  planeIcon.style.top = `${planeLatitude}px`; */
-
   const planeIcon = document.createElement('img');
   planeIcon.src = 'Logo/ME.png'; // Assuming the plane icon image is in the "logo" folder
   planeIcon.style.position = 'fixed';
-planeIcon.style.width = '45px';
-planeIcon.style.height = '45px';
-planeIcon.style.left = '50%';  // Set left position to 50%
-planeIcon.style.top = '50%';   // Set top position to 50%
-planeIcon.style.transformOrigin = 'center center';
-planeIcon.style.transform = `translate(-50%, -50%) rotate(${flightHeading}deg)`; // Translate to center and rotate the plane icon based on flight heading
+  planeIcon.style.width = '45px';
+  planeIcon.style.height = '45px';
+  planeIcon.style.left = '50%';  // 
+  planeIcon.style.top = '50%';   // 37
+/*   planeIcon.style.left = `${planeLongitude}px`;  
+  planeIcon.style.top = `${planeLatitude}px`; */
+  planeIcon.style.transformOrigin = 'center center';
+  planeIcon.style.transform = `translate(-50%, -50%) rotate(${flightHeading}deg)`; // Translate to center and rotate the plane icon based on flight heading
+  
+ // planeIcon.style.transform = `rotate(${flightHeading}deg)`;  Rotate the plane icon based on flight heading
 
-/*   planeIcon.style.transformOrigin = 'center center';
-  planeIcon.style.transform = `rotate(${flightHeading}deg)`; // Rotate the plane icon based on flight heading
- */
   // Set an id for the plane icon element
   planeIcon.id = 'plane-icon';
 
