@@ -264,10 +264,19 @@ var requestOptions = {
 
 const arrivalCityCode = pilot.flight_plan.arrival;
 
-console.log("ACityCode", arrivalCityCode)
-console.log("apiKey_checkwx ",apiKey_checkwx)
+//console.log("ACityCode", arrivalCityCode)
+//console.log("apiKey_checiKey_checkwx ",apkwx)
 
 //debugger
+
+
+// Check first to make sure the apiKey_checkwx is not blank before checking the METAR
+
+
+
+
+if (apiKey_checkwx){
+
  fetch(`https://api.checkwx.com/metar/${arrivalCityCode}/decoded`, requestOptions)
 .then(response => response.json())
 .then(data => {
@@ -281,6 +290,7 @@ console.log("apiKey_checkwx ",apiKey_checkwx)
     document.getElementById('route').textContent = `Route: ${route}`;
 })
 .catch(error => console.log('error', error));
+}
 
 //*******************************************************// 
 
