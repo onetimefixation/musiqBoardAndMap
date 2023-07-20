@@ -268,6 +268,8 @@ const arrivalCityCode = pilot.flight_plan.arrival;
 .then(response => response.json())
 .then(data => {
 
+debugger
+
     const arrivalMetar = data.data[0].raw_text;
 
     document.getElementById('arrivalMETAR_el').textContent = `Arrival METAR: ${arrivalMetar}`;
