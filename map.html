@@ -263,7 +263,11 @@ var requestOptions = {
 };
 
 const arrivalCityCode = pilot.flight_plan.arrival;
-debugger
+
+console.log("ACityCode", arrivalCityCode)
+console.log("apiKey_checkwx ",apiKey_checkwx)
+
+//debugger
  fetch(`https://api.checkwx.com/metar/${arrivalCityCode}/decoded`, requestOptions)
 .then(response => response.json())
 .then(data => {
