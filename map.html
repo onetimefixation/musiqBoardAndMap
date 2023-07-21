@@ -301,10 +301,10 @@ if (apiKey_checkwx){
 // Check if the plane icon already exists in the map container
 const existingPlaneIcon = document.getElementById('plane-icon');
 
-if (existingPlaneIcon) {
   // Erase the loading message
   loadingMsg.innerText = "";
 
+  if (existingPlaneIcon) {
   existingPlaneIcon.style.left = '40%';  // 
   existingPlaneIcon.style.top = '50%';   //
 //  existingPlaneIcon.style.transform = `translate(-50%, -50%) rotate(${flightHeading}deg)`; // Translate to center and rotate the plane icon based on flight heading
