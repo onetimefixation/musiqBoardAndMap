@@ -419,6 +419,9 @@ function processAirportData(datContents) {
   const logoSrc = `/Logo/${airlineCode}.png`;
   const fallbackLogoSrc = '/Logo/BBB.png';
 
+debugger
+
+
             if (/\d/.test(airlineCode.charAt(2))) {
                 logo.src = fallbackLogoSrc; // Use fallback logo for codes starting with 'N'
             } else {
