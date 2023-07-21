@@ -324,9 +324,9 @@ if (existingPlaneIcon) {
   planeIcon.style.transformOrigin = 'center center';
   planeIcon.style.transform = `translate(-50%, -50%) rotate(${flightHeading}deg)`; // Translate to center and rotate the plane icon based on flight heading
   
-  planeIcon.style.position = 'absolute';
-  planeIcon.style.left = '40%';
-  planeIcon.style.top = '60%';
+  loadingMsg.style.position = 'absolute';
+  loadingMsg.style.left = '40%';
+  loadingMsg.style.top = '60%';
 
   // Set an id for the plane icon and loadingMsg elements
   planeIcon.id = 'plane-icon';
