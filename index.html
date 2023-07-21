@@ -531,14 +531,22 @@ if (/\d/.test(airlineCode.charAt(2))) {
     logo.src = logoSrc;
   });
 
+/*   the ternary operator ? is used to check the value of exists. If exists is true, the value of logoSrc is assigned to the src attribute of the logo element. If exists is false, the fallback logo image ('/Logo/BBB.png') is assigned to the src attribute. The ternary operator serves as a more concise replacement for the if/else statement. */
+
   logoExists.then((exists) => {
+  logo.src = exists ? logoSrc : '/Logo/BBB.png';
+});
+
+
+
+/*   logoExists.then((exists) => {
     if (exists) {
       logo.src = logoSrc;
     } else {
       //console.error(`Logo image not found for logo/${airlineCode}.png. Using fallback logo.`);
       logo.src = '/Logo/BBB.png';
     }
-  });
+  }); */
 
 
 }
