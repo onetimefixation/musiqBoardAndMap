@@ -326,7 +326,7 @@ if (existingPlaneIcon) {
   
   loadingMsg.style.position = 'absolute';
   loadingMsg.style.color = 'white'
-  loadingMsg.style.left = '40%';
+  loadingMsg.style.left = '30%';
   loadingMsg.style.top = '60%';
 
   // Set an id for the plane icon and loadingMsg elements
@@ -422,9 +422,6 @@ function processAirportData(datContents) {
   const airlineCode = callsign ? callsign.substring(0, 3).toUpperCase() : '';
   const logoSrc = `/Logo/${airlineCode}.png`;
   const fallbackLogoSrc = '/Logo/BBB.png';
-
-debugger
-
 
             if (/\d/.test(airlineCode.charAt(2))) {
                 logo.src = fallbackLogoSrc; // Use fallback logo for codes starting with 'N'
