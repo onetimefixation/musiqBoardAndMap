@@ -497,7 +497,7 @@ function fetchFlightData() {
 // Create a flight list item
 function createFlightListItem(flight) {
 
-  debugger
+
 
 //console.log("createFlightListItem")
 //debugger
@@ -510,7 +510,13 @@ function createFlightListItem(flight) {
   const airlineCode = flight.callsign.substring(0, 3).toUpperCase();
   let logoSrc = `/Logo/${airlineCode}.png`;
   const fallbackLogoSrc = '/Logo/BBB.png';
-
+ 
+ 
+ 
+  debugger
+ 
+ 
+ 
   // Create an image element for the logo
 const logo = document.createElement('img');
 
