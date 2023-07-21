@@ -264,24 +264,14 @@ var requestOptions = {
 
 const arrivalCityCode = pilot.flight_plan.arrival;
 
-//console.log("ACityCode", arrivalCityCode)
-//console.log("apiKey_checiKey_checkwx ",apkwx)
-
-//debugger
-
 
 // Check first to make sure the apiKey_checkwx is not blank before checking the METAR
-
-
-
 
 if (apiKey_checkwx){
 
  fetch(`https://api.checkwx.com/metar/${arrivalCityCode}/decoded`, requestOptions)
 .then(response => response.json())
 .then(data => {
-
-
 
     const arrivalMetar = data.data[0].raw_text;
 
@@ -312,7 +302,8 @@ if (apiKey_checkwx){
 const existingPlaneIcon = document.getElementById('plane-icon');
 
 if (existingPlaneIcon) {
-  // Update the position and rotation of the existing plane icon
+  // Erase the loading message
+  loadingMsg.innerText = "";
 
   existingPlaneIcon.style.left = '40%';  // 
   existingPlaneIcon.style.top = '50%';   //
@@ -320,6 +311,10 @@ if (existingPlaneIcon) {
 } else {
   // Create the plane icon image element
   const planeIcon = document.createElement('img');
+  const loadingMsg = document.createElement('loadmsg');
+
+  loadingMsg.innerText = "Loading Images ... Please wait"
+
   planeIcon.src = 'Logo/ME.png'; // Assuming the plane icon image is in the "logo" folder
   planeIcon.style.position = 'absolute';
   planeIcon.style.width = '45px';
@@ -330,16 +325,16 @@ if (existingPlaneIcon) {
   planeIcon.style.transform = `translate(-50%, -50%) rotate(${flightHeading}deg)`; // Translate to center and rotate the plane icon based on flight heading
   
 
- 
-// planeIcon.style.transform = `rotate(${flightHeading}deg)`;  Rotate the plane icon based on flight heading
-
-  // Set an id for the plane icon element
+  // Set an id for the plane icon and loadingMsg elements
   planeIcon.id = 'plane-icon';
+  loadingMsg.id = 'loadingMsg';
 
-  // Append the plane icon to the map container
+  // Append the plane icon and loadingMsg to the map container
   const mapContainer = document.getElementById('map-container');
 
   mapContainer.appendChild(planeIcon);
+  mapContainer.appendChild(loadingMsg);
+
 }
 
         // Function to reload the page when index.html changes
