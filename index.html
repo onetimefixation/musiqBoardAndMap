@@ -519,7 +519,24 @@ logo.style.height = '40px';
 if (/\d/.test(airlineCode.charAt(2))) {
   logo.src = fallbackLogoSrc; // Use fallback logo for codes starting with 'N'
 } else {
-const img = new Image();
+
+  const logoExists = new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => resolve(true);
+    img.onerror = () => resolve(false);
+    logo.src = logoSrc;
+  });
+
+  logoExists.then((exists) => {
+    if (exists) {
+      logo.src = logoSrc;
+    } else {
+      console.error(`Logo image not found for logo/${airlineCode}.png. Using fallback logo.`);
+      logo.src = 'logo/BBB.png';
+    }
+  });
+
+/* const img = new Image();
 const logoSrc = `/Logo/${airlineCode}.png`;
 const fallbackLogoSrc = '/Logo/BBB.png';
 
@@ -538,7 +555,7 @@ img.onerror = () => {
   
 };
 
-img.src = logoSrc; // Start loading the image
+img.src = logoSrc; // Start loading the image */
 
 /****************************************
    const logoExists = new Promise((resolve) => {
