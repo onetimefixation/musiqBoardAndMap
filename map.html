@@ -301,8 +301,11 @@ if (apiKey_checkwx){
 // Check if the plane icon already exists in the map container
 const existingPlaneIcon = document.getElementById('plane-icon');
 
-  // Erase the loading message
+  // Erase the loading message if it exists
+if (typeof loadingMsg !== 'undefined') {
   loadingMsg.innerText = "";
+}
+;
 
   if (existingPlaneIcon) {
   existingPlaneIcon.style.left = '40%';  // 
