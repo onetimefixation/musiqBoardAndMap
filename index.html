@@ -526,7 +526,10 @@ const fallbackLogoSrc = '/Logo/BBB.png';
 img.onload = () => {
   // Image exists, set it as the logo
   logo.src = logoSrc;
-  
+  console.log("Good load *********************")
+  console.log("Good load *********************")
+  console.log("Good load *********************")
+  console.log("Good load *********************")
 };
 
 img.onerror = () => {
@@ -534,7 +537,7 @@ img.onerror = () => {
   logo.src = fallbackLogoSrc;
   
 };
-debugger
+
 img.src = logoSrc; // Start loading the image
 
 /****************************************
