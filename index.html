@@ -526,13 +526,13 @@ const fallbackLogoSrc = '/Logo/BBB.png';
 img.onload = () => {
   // Image exists, set it as the logo
   logo.src = logoSrc;
-  debugger
+  
 };
 
 img.onerror = () => {
   // Image does not exist, set fallback logo
   logo.src = fallbackLogoSrc;
-  debugger
+  
 };
 
 img.src = logoSrc; // Start loading the image
